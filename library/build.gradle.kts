@@ -8,7 +8,7 @@ plugins {
     alias(libs.plugins.vanniktech.mavenPublish)
 }
 
-group = "com.github.aughtone"
+group = "io.github.aughtone"
 version = "0.0.1-alpha1"
 
 kotlin {
@@ -40,7 +40,7 @@ kotlin {
 }
 
 android {
-    namespace = "org.geohash.multiplatform"
+    namespace = "io.github.aughtone.geohash"
     compileSdk = libs.versions.android.compileSdk.get().toInt()
     defaultConfig {
         minSdk = libs.versions.android.minSdk.get().toInt()
@@ -80,9 +80,9 @@ mavenPublishing {
             }
         }
         scm {
-            url = "https://github.com/bpappin/geohash-multiplatform"
-            connection = "https://github.com/bpappin/geohash-multiplatform.git"
-            developerConnection = "git@github.com:bpappin/geohash-multiplatform.git"
+            url = "https://github.com/aughtone/geohash-multiplatform"
+            connection = "https://github.com/aughtone/geohash-multiplatform.git"
+            developerConnection = "git@github.com:aughtone/geohash-multiplatform.git"
         }
     }
 }
