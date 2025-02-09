@@ -8,8 +8,8 @@ plugins {
     alias(libs.plugins.vanniktech.mavenPublish)
 }
 
-group = "io.github.kotlin"
-version = "1.0.0"
+group = "com.github.aughtone"
+version = "0.0.1-alpha1"
 
 kotlin {
     jvm()
@@ -17,7 +17,7 @@ kotlin {
         publishLibraryVariants("release")
         @OptIn(ExperimentalKotlinGradlePluginApi::class)
         compilerOptions {
-            jvmTarget.set(JvmTarget.JVM_1_8)
+            jvmTarget.set(JvmTarget.JVM_17)
         }
     }
     iosX64()
@@ -40,43 +40,49 @@ kotlin {
 }
 
 android {
-    namespace = "org.jetbrains.kotlinx.multiplatform.library.template"
+    namespace = "org.geohash.multiplatform"
     compileSdk = libs.versions.android.compileSdk.get().toInt()
     defaultConfig {
         minSdk = libs.versions.android.minSdk.get().toInt()
+    }
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
 }
 
 mavenPublishing {
     publishToMavenCentral(SonatypeHost.CENTRAL_PORTAL)
 
-    signAllPublications()
+//    signAllPublications()
 
-    coordinates(group.toString(), "library", version.toString())
+
+
+    coordinates(group.toString(), "geohash-multiplatform", version.toString())
 
     pom {
-        name = "My library"
+        name = "Geohash Multiplatform Library"
         description = "A library."
-        inceptionYear = "2024"
-        url = "https://github.com/kotlin/multiplatform-library-template/"
+        inceptionYear = "2025"
+        url = "https://github.com/aughtone/geohash-multiplatform"
         licenses {
             license {
-                name = "XXX"
-                url = "YYY"
-                distribution = "ZZZ"
+                name = "Apache License 2.0"
+                url = "https://www.apache.org/licenses/LICENSE-2.0"
+                distribution = "2.0"
             }
         }
         developers {
             developer {
-                id = "XXX"
-                name = "YYY"
-                url = "ZZZ"
+                id = "bpappin"
+                name = "Brill pappin"
+                url = "https://github.com/bpappin"
             }
         }
         scm {
-            url = "XXX"
-            connection = "YYY"
-            developerConnection = "ZZZ"
+            url = "https://github.com/bpappin/geohash-multiplatform"
+            connection = "https://github.com/bpappin/geohash-multiplatform.git"
+            developerConnection = "git@github.com:bpappin/geohash-multiplatform.git"
         }
     }
 }
