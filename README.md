@@ -1,7 +1,13 @@
-[![GitHub license](https://img.shields.io/badge/license-Apache%20License%202.0-blue.svg?style=for-the-badge)](http://www.apache.org/licenses/LICENSE-2.0)
-![Maven Central Version](https://img.shields.io/maven-central/v/io.github.aughtone/geohash-multiplatform?style=for-the-badge)
-[![Kotlin](https://img.shields.io/badge/kotlin-2.1.10-blue.svg?logo=kotlin&style=for-the-badge)](http://kotlinlang.org)
-![Static Badge](https://img.shields.io/badge/kotlin-multiplatform-brightgreen?style=for-the-badge)
+[![GitHub license](https://img.shields.io/badge/license-Apache%20License%202.0-blue.svg?style=flat)](http://www.apache.org/licenses/LICENSE-2.0)
+![Maven Central Version](https://img.shields.io/maven-central/v/io.github.aughtone/geohash-multiplatform?style=flat)
+[![Kotlin](https://img.shields.io/badge/Kotlin-2.1.10-blue.svg?logo=kotlin&style=flat)](http://kotlinlang.org)
+[![Kotlin Multiplatform](https://img.shields.io/badge/Kotlin-Multiplatform-brightgreen?logo=kotlin)](https://github.com/JetBrains/compose-multiplatform)
+
+
+![badge-android](http://img.shields.io/badge/platform-android-6EDB8D.svg?style=flat)
+![badge-ios](http://img.shields.io/badge/platform-ios-CDCDCD.svg?style=flat)
+![badge-desktop](http://img.shields.io/badge/platform-desktop-DB413D.svg?style=flat)
+![badge-js](http://img.shields.io/badge/platform-js%2Fwasm-FDD835.svg?style=flat)
 
 
 # Geohash Multiplatform
