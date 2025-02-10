@@ -1,6 +1,6 @@
 [![GitHub license](https://img.shields.io/badge/license-Apache%20License%202.0-blue.svg?style=for-the-badge)](http://www.apache.org/licenses/LICENSE-2.0)
 ![Maven Central Version](https://img.shields.io/maven-central/v/io.github.aughtone/geohash-multiplatform?style=for-the-badge)
-[![Kotlin](https://img.shields.io/badge/kotlin-2.1.10-blue.svg?logo=kotlin?style=for-the-badge)](http://kotlinlang.org)
+[![Kotlin](https://img.shields.io/badge/kotlin-2.1.10-blue.svg?logo=kotlin&style=for-the-badge)](http://kotlinlang.org)
 ![Static Badge](https://img.shields.io/badge/kotlin-multiplatform-brightgreen?style=for-the-badge)
 
 
