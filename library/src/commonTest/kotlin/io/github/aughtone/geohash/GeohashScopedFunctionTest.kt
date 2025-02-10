@@ -16,7 +16,7 @@ class GeohashScopedFunctionTest {
         val actual = geohash(testGeohash) {
             assertTrue(it contains testCoordinate)
             assertEquals("eesfp3cpxv", it.southOf())
-            assertEquals("eesfp3cpxz", it adjacent io.github.aughtone.geohash.Direction.TOP)
+            assertEquals("eesfp3cpxz", it adjacent Direction.TOP)
             it
         }
         assertEquals(testGeohash, actual)
@@ -27,7 +27,7 @@ class GeohashScopedFunctionTest {
         val actual = geohash(testGeohashLong) {
             assertTrue(it contains testCoordinate)
             assertEquals("eesfp3cpxyf7", it.southOf())
-            assertEquals("eesfp3cpxyfm", it adjacent io.github.aughtone.geohash.Direction.TOP)
+            assertEquals("eesfp3cpxyfm", it adjacent Direction.TOP)
             it
         }
         assertEquals(testGeohashLong, actual)

@@ -9,7 +9,7 @@ plugins {
 }
 
 group = "io.github.aughtone"
-version = "0.0.1-alpha1"
+version = "1.0.0-alpha1"
 
 kotlin {
     jvm()
@@ -67,9 +67,9 @@ mavenPublishing {
         url = "https://github.com/aughtone/geohash-multiplatform"
         licenses {
             license {
-                name = "Apache License 2.0"
+                name = "The Apache License, Version 2.0"
                 url = "https://www.apache.org/licenses/LICENSE-2.0"
-                distribution = "2.0"
+                distribution = "https://www.apache.org/licenses/LICENSE-2.0.txt"
             }
         }
         developers {
