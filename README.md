@@ -1,4 +1,8 @@
-# Geohash Multiplatform library
+[![GitHub license](https://img.shields.io/badge/license-Apache%20License%202.0-blue.svg?style=flat)](http://www.apache.org/licenses/LICENSE-2.0)
+![Maven Central Version](https://img.shields.io/maven-central/v/io.github.aughtone/geohash-multiplatform)
+[![Kotlin](https://img.shields.io/badge/kotlin-2.1.10-blue.svg?logo=kotlin)](http://kotlinlang.org)
+
+# Geohash Multiplatform
 
 This library for set up for [Kotlin Multiplatform](https://www.jetbrains.com/kotlin-multiplatform/) (KMP)
 
