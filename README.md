@@ -1,4 +1,10 @@
-# Geohash Multiplatform library
+[![GitHub license](https://img.shields.io/badge/license-Apache%20License%202.0-blue.svg?style=for-the-badge)](http://www.apache.org/licenses/LICENSE-2.0)
+![Maven Central Version](https://img.shields.io/maven-central/v/io.github.aughtone/geohash-multiplatform?style=for-the-badge)
+[![Kotlin](https://img.shields.io/badge/kotlin-2.1.10-blue.svg?logo=kotlin&style=for-the-badge)](http://kotlinlang.org)
+![Static Badge](https://img.shields.io/badge/kotlin-multiplatform-brightgreen?style=for-the-badge)
+
+
+# Geohash Multiplatform
 
 This library for set up for [Kotlin Multiplatform](https://www.jetbrains.com/kotlin-multiplatform/) (KMP)
 
@@ -26,9 +32,9 @@ Dave lists several features on his project page, but I'll just paraphrase the im
 * encodes & decodes Long values from geohashes
 
 # Installation
-
+![Maven Central Version](https://img.shields.io/maven-central/v/io.github.aughtone/geohash-multiplatform?style=flat)
 ```gradle
-implementation("io.github.aughtone:geohash-multiplatform:1.0.0-alpha1")
+implementation("io.github.aughtone:geohash-multiplatform:${version}")
 ```
 
 # Quick Start
