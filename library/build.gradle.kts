@@ -54,9 +54,7 @@ android {
 mavenPublishing {
     publishToMavenCentral(SonatypeHost.CENTRAL_PORTAL)
 
-//    signAllPublications()
-
-
+    signAllPublications()
 
     coordinates(group.toString(), "geohash-multiplatform", version.toString())
 
