@@ -1,5 +1,7 @@
 package io.github.aughtone.geohash
 
+import io.github.aughtone.types.quantitative.Coordinates
+
 object GeohashScope {
     /**
      * Returns the adjacent hash to the right (east).
@@ -31,7 +33,7 @@ object GeohashScope {
      * @param coordinate [Coordinate] to check
      * @return [Boolean]
      */
-    infix fun String.contains(coordinate: Coordinate) = Geohash.hashContains(this, coordinate)
+    infix fun String.contains(coordinate: Coordinates) = Geohash.hashContains(this, coordinate)
 
     /**
      * Returns the adjacent hash in given [Direction].

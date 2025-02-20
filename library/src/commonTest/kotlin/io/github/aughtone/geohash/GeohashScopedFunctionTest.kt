@@ -1,5 +1,6 @@
 package io.github.aughtone.geohash
 
+import io.github.aughtone.types.quantitative.Coordinates
 import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertTrue
@@ -7,7 +8,7 @@ import kotlin.test.assertTrue
 class GeohashScopedFunctionTest {
     private val testLatitude = 20.05
     private val testLongitude = -15.5
-    private val testCoordinate = Coordinate(testLatitude, testLongitude)
+    private val testCoordinate = Coordinates(testLatitude, testLongitude)
     private val testGeohash = "eesfp3cpxy"
     private val testGeohashLong = 7741945652739808556L
 

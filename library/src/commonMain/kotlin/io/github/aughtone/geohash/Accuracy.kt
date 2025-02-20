@@ -21,51 +21,51 @@ package io.github.aughtone.geohash
  */
 enum class Accuracy(val length:Int) {
     /**
-     * Cell width x height: ≤ 5,000km × 5,000km
+     * About a 5000km area with a cell width x height: ≤ 5,000km × 5,000km
      */
-    FiveThousandKilometres(length = 1),
+    About5000km(length = 1),
     /**
-     * Cell width x height: ≤ 1,250km × 625km
+     * About a 1000km area with a cell width x height: ≤ 1,250km × 625km
      */
-    OneThousandKilometres(length = 2),
+    About1000km(length = 2),
     /**
-     * Cell width x height: ≤ 156km × 156km
+     * About a 150km area with a cell width x height: ≤ 156km × 156km
      */
-    OneHundredFiftyKilometres(length = 3),
+    About150km(length = 3),
     /**
-     * Cell width x height: ≤ 39.1km × 19.5km
+     * About a 30km area with a cell width x height: ≤ 39.1km × 19.5km
      */
-    ThirtyKilometres(length = 4),
+    About30km(length = 4),
     /**
-     * Cell width x height: ≤ 4.89km × 4.89km
+     * About a 5km area with a cell width x height: ≤ 4.89km × 4.89km
      */
-    FiveKilometres(length = 5),
+    About5km(length = 5),
     /**
-     * Cell width x height: ≤ 1.22km × 0.61km
+     * About a 1km area with a cell width x height: ≤ 1.22km × 0.61km
      */
-    OneKilometre(length = 6),
+    About1km(length = 6),
     /**
-     * Cell width x height: ≤ 153m × 153m
+     * About a 150m area with a cell width x height: ≤ 153m × 153m
      */
-    OneHundredFiftyMetres(length = 7),
+    About150m(length = 7),
     /**
-     * Cell width x height: ≤ 38.2m × 19.1m
+     * About a 30m area with a cell width x height: ≤ 38.2m × 19.1m
      */
-    ThirtyMetres(length = 8),
+    About30m(length = 8),
     /**
-     * Cell width x height: ≤ 4.77m × 4.77m
+     * About a 5m area with a cell width x height: ≤ 4.77m × 4.77m
      */
-    FiveMetres(length = 9),
+    About5m(length = 9),
     /**
-     * Cell width x height: ≤ 1.19m × 0.596m
+     * About a 1m area with a cell width x height: ≤ 1.19m × 0.596m
      */
-    OneMetre(length = 10),
+    About1m(length = 10),
     /**
-     * Cell width x height: ≤ 149mm × 149mm
+     * About a 1/10m or 1dm area with a cell width x height: ≤ 149mm × 149mm
      */
-    OneDecimetre(length = 11),
+    About1dm(length = 11),
     /**
-     * Cell width x height: ≤ 37.2mm × 18.6mm
+     * Pinpoint. About a 3cm area with a cell width x height: ≤ 37.2mm × 18.6mm
      */
-    Pinpoint(length = Geohash.MAX_HASH_LENGTH),
+    About3cm(length = 12);
 }
