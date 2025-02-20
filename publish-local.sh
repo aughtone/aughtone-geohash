@@ -1,3 +1,3 @@
 #!/bin/sh
-./gradlew publishToMavenLocal 
+./gradlew -Pskip-signing=true  publishToMavenLocal 
 exit 0

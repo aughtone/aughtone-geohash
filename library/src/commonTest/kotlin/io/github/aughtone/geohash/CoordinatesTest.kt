@@ -1,5 +1,7 @@
 package io.github.aughtone.geohash
 
+import io.github.aughtone.types.quantitative.Coordinates
+import io.github.aughtone.types.quantitative.split
 import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertNotEquals
@@ -8,20 +10,20 @@ import kotlin.test.assertTrue
 class CoordinatesTest {
     private val testLatitude = 20.05
     private val testLongitude = -15.5
-    private val testCoordinate = Coordinate(testLatitude, testLongitude)
+    private val testCoordinate = Coordinates(testLatitude, testLongitude)
 
     @Test
     fun testToString() {
         assertEquals(
-            "Coordinate(latitude=20.05, longitude=-15.5)",
+            "Coordinates(latitude=20.05, longitude=-15.5, accuracy=null)",
             testCoordinate.toString()
         )
     }
 
     @Test
     fun testHashCode() {
-        val a: Coordinate = testCoordinate
-        val b: Coordinate = Coordinate(testLatitude, testLongitude)
+        val a: Coordinates = testCoordinate
+        val b: Coordinates = Coordinates(testLatitude, testLongitude)
 
         assertEquals(a.hashCode(), b.hashCode())
         assertEquals(a, b)
@@ -30,15 +32,15 @@ class CoordinatesTest {
 
     @Test
     fun testInfixEquals() {
-        val a: Coordinate = testCoordinate
-        val b: Coordinate = Coordinate(testLatitude, testLongitude)
+        val a: Coordinates = testCoordinate
+        val b: Coordinates = Coordinates(testLatitude, testLongitude)
 
         assertTrue(a == b)
     }
 
     @Test
     fun testInfixAdd() {
-        val a: Coordinate = testCoordinate
+        val a: Coordinates = testCoordinate
         val b = a(1.0, 1.0)
         assertNotEquals(a, b)
         assertEquals(21.05, b.latitude)
@@ -62,9 +64,9 @@ class CoordinatesTest {
 
     @Test
     fun testToGeohashWithAccuracy() {
-        assertEquals("ees", testCoordinate.toGeohash(Accuracy.OneHundredFiftyKilometres))
-        assertEquals("eesfp3cpx", testCoordinate.toGeohash(Accuracy.FiveMetres))
-        assertEquals("eesfp3cpxy", testCoordinate.toGeohash(Accuracy.OneMetre))
+        assertEquals("ees", testCoordinate.toGeohash(Accuracy.About150km))
+        assertEquals("eesfp3cpx", testCoordinate.toGeohash(Accuracy.About5m))
+        assertEquals("eesfp3cpxy", testCoordinate.toGeohash(Accuracy.About1m))
     }
 
     @Test

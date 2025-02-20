@@ -9,7 +9,7 @@ plugins {
 }
 
 group = "io.github.aughtone"
-version = "1.0.0-alpha1"
+version = "1.0.1-alpha1"
 
 kotlin {
     jvm()
@@ -29,6 +29,8 @@ kotlin {
         val commonMain by getting {
             dependencies {
                 //put your multiplatform dependencies here
+
+                api(libs.framework.type)
             }
         }
         val commonTest by getting {
@@ -54,7 +56,9 @@ android {
 mavenPublishing {
     publishToMavenCentral(SonatypeHost.CENTRAL_PORTAL)
 
-    signAllPublications()
+    if (!project.hasProperty("skip-signing")) {
+        signAllPublications()
+    }
 
     coordinates(group.toString(), "geohash-multiplatform", version.toString())
 
