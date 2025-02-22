@@ -30,7 +30,7 @@ kotlin {
             dependencies {
                 //put your multiplatform dependencies here
 
-                api(libs.framework.type)
+                api(libs.framework.types)
             }
         }
         val commonTest by getting {
