@@ -27,4 +27,4 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "geohash-multiplatform"
-include(":library")
+include(":geohash-multiplatform")
