@@ -4,9 +4,11 @@ kotlin = "2.1.10"
 android-minSdk = "24"
 android-compileSdk = "34"
 vanniktech = "0.30.0"
+frameworkType = "1.0.0-alpha1"
 
 [libraries]
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
+framework-types = { module = "io.github.aughtone:framework-types", version.ref = "frameworkType" }
 
 [plugins]
 androidLibrary = { id = "com.android.library", version.ref = "agp" }
