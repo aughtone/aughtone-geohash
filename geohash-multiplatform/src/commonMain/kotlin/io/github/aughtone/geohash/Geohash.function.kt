@@ -1,5 +1,7 @@
 package io.github.aughtone.geohash
 
+import io.github.aughtone.types.quantitative.Coordinates
+
 /**
  * Treat a [String] as a geohash
  * @param geohash [String] the geohash to work with
@@ -21,15 +23,15 @@ fun geohash(geohash: Long, block: GeohashScope.(geohash: String) -> String): Lon
 }
 
 /**
- * Encodes a [Coordinate] into a geohash with the given [Accuracy]. Defaults to [Accuracy.Pinpoint]
+ * Encodes a [Coordinate] into a geohash with the given [Accuracy]. Defaults to [Accuracy.About3cm]
  *
  * @param coordinate [Coordinate] to encode
  * @param accuracy [Accuracy] (optional) accuracy of the desired Geohash. Defaults to the maximum
- * value of [Accuracy.Pinpoint] (12).
+ * value of [Accuracy.About3cm] (12).
  * @return [String] a Geohash of given length
  * @throws [IllegalArgumentException] if latitude is not between -90 and 90.
  */
-fun stringGeohashOf(coordinate: Coordinate, accuracy: Accuracy = Accuracy.Pinpoint): String =
+fun stringGeohashOf(coordinate: Coordinates, accuracy: Accuracy = Accuracy.About3cm): String =
     Geohash.encodeGeohash(coordinate, accuracy.length)
 
 /**
@@ -40,7 +42,7 @@ fun stringGeohashOf(coordinate: Coordinate, accuracy: Accuracy = Accuracy.Pinpoi
  * @return [String] a Geohash of given length
  * @throws [IllegalArgumentException] if latitude is not between -90 and 90.
  */
-fun stringGeohashOf(coordinate: Coordinate, length: Int = Geohash.MAX_HASH_LENGTH): String =
+fun stringGeohashOf(coordinate: Coordinates, length: Int = Geohash.MAX_HASH_LENGTH): String =
     Geohash.encodeGeohash(coordinate, length)
 
 /**
@@ -68,7 +70,7 @@ fun stringGeohashOf(
  * @return [Long] a Geohash of given length
  * @throws [IllegalArgumentException] if latitude is not between -90 and 90.
  */
-fun longGeohashOf(coordinate: Coordinate, length: Int = Geohash.MAX_HASH_LENGTH): Long =
+fun longGeohashOf(coordinate: Coordinates, length: Int = Geohash.MAX_HASH_LENGTH): Long =
     Geohash.encodeToLong(
         latitude = coordinate.latitude,
         longitude = coordinate.longitude,
@@ -82,7 +84,7 @@ fun longGeohashOf(coordinate: Coordinate, length: Int = Geohash.MAX_HASH_LENGTH)
  * @param geohash [String] the geohash to decode
  * @return [Coordinate] the latitude and longitude represented by the Geohash.
  */
-fun coordinateOf(geohash: String): Coordinate = Geohash.decodeGeohash(geohash)
+fun coordinateOf(geohash: String): Coordinates = Geohash.decodeGeohash(geohash)
 
 /**
  * Returns a [Coordinate] as the centre of the given geohash.
@@ -91,5 +93,5 @@ fun coordinateOf(geohash: String): Coordinate = Geohash.decodeGeohash(geohash)
  * @param geohash [Long] the geohash to decode
  * @return [Coordinate] the latitude and longitude represented by the Geohash.
  */
-fun coordinateOf(geohash: Long): Coordinate =
+fun coordinateOf(geohash: Long): Coordinates =
     Geohash.decodeGeohash(Geohash.fromLongToString(geohash))

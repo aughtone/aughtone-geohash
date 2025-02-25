@@ -1,5 +1,7 @@
 package io.github.aughtone.geohash
 
+import io.github.aughtone.types.quantitative.Coordinates
+import io.github.aughtone.types.quantitative.add
 import kotlin.math.pow
 import kotlin.test.Test
 import kotlin.test.assertEquals
@@ -68,7 +70,7 @@ class GeohashTest {
     fun testWhiteHouseHashEncodeUsingLatLongObject() {
         assertEquals(
             "dqcjqcp84c6e", Geohash.encodeGeohash(
-                Coordinate(
+                Coordinates(
                     38.89710201881826,
                     -77.03669792041183
                 )
@@ -78,7 +80,7 @@ class GeohashTest {
 
     @Test
     fun testWhiteHouseHashDecode() {
-        val point: Coordinate = Geohash.decodeGeohash("dqcjqcp84c6e")
+        val point: Coordinates = Geohash.decodeGeohash("dqcjqcp84c6e")
         assertEquals(point.latitude, 38.89710201881826, PRECISION)
         assertEquals(point.longitude, -77.03669792041183, PRECISION)
     }
@@ -265,7 +267,7 @@ class GeohashTest {
 
     @Test
     fun testHashDecodeOnBlankString() {
-        val point: Coordinate = Geohash.decodeGeohash("")
+        val point: Coordinates = Geohash.decodeGeohash("")
         assertEquals(0.0, point.latitude, PRECISION)
         assertEquals(0.0, point.longitude, PRECISION)
     }
@@ -673,7 +675,7 @@ class GeohashTest {
 
     @Test
     fun testHashContains() {
-        val centre: Coordinate = Geohash.decodeGeohash("dre7")
+        val centre: Coordinates = Geohash.decodeGeohash("dre7")
         assertTrue(
             Geohash.hashContains(
                 "dre7", centre.latitude,
