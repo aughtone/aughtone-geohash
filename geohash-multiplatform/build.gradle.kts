@@ -11,7 +11,7 @@ plugins {
 }
 
 group = "io.github.aughtone"
-version = "1.0.1-alpha1"
+version = "1.0.0-alpha2"
 
 kotlin {
     jvm()
