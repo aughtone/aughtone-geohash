@@ -9,6 +9,7 @@ pluginManagement {
         }
         mavenCentral()
         gradlePluginPortal()
+        mavenLocal()
     }
 }
 
@@ -27,4 +28,4 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "geohash-multiplatform"
-include(":geohash-multiplatform")
+include(":geohash")
