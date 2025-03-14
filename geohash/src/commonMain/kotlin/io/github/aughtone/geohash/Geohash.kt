@@ -4,6 +4,7 @@
 package io.github.aughtone.geohash
 
 import io.github.aughtone.geohash.support.lowerNibble
+import io.github.aughtone.types.quantitative.Coordinates
 import kotlin.math.abs
 
 
@@ -130,7 +131,7 @@ object Geohash {
         // if so, wrap round to the other limit for longitude
         // or if at latitude boundary (a pole) then spin longitude around 180
         // degrees.
-        val centre: Coordinate = decodeGeohash(hash)
+        val centre: Coordinates = decodeGeohash(hash)
 
         when (direction) {
             io.github.aughtone.geohash.Direction.BOTTOM -> if (abs(centre.latitude - widthDegrees(hash.length) / 2 + 90) < PRECISION) {
@@ -266,7 +267,7 @@ object Geohash {
 
     internal fun fromStringToLong(geohash: String): Long  = encodeToLong(decodeGeohash(geohash), geohash.length)
 
-    fun encodeToLong(coordinate: Coordinate, length: Int): Long = encodeToLong(
+    fun encodeToLong(coordinate: Coordinates, length: Int): Long = encodeToLong(
         latitude = coordinate.latitude,
         longitude = coordinate.longitude,
         length = length
@@ -376,12 +377,12 @@ object Geohash {
      * @return true if and only if the hash contains the given lat and long
      */
     fun hashContains(geohash: String, latitude: Double, longitude: Double): Boolean {
-        val centre: Coordinate = decodeGeohash(geohash)
+        val centre: Coordinates = decodeGeohash(geohash)
         return abs(centre.latitude - latitude) <= heightDegrees(geohash.length) / 2
                 && abs(io.github.aughtone.geohash.to180(centre.longitude - longitude)) <= widthDegrees(geohash.length) / 2
     }
 
-    fun hashContains(geohash: String, coordinate: Coordinate): Boolean = hashContains(
+    fun hashContains(geohash: String, coordinate: Coordinates): Boolean = hashContains(
         geohash = geohash,
         latitude = coordinate.latitude,
         longitude = coordinate.longitude
@@ -663,7 +664,7 @@ object Geohash {
      * length of hash
      * @return hash at point of given length
      */
-    fun encodeGeohash(coordinate: Coordinate, length: Int): String {
+    fun encodeGeohash(coordinate: Coordinates, length: Int): String {
         return encodeGeohash(coordinate.latitude, coordinate.longitude, length)
     }
 
@@ -675,7 +676,7 @@ object Geohash {
      * point
      * @return hash of default length
      */
-    fun encodeGeohash(coordinate: Coordinate): String {
+    fun encodeGeohash(coordinate: Coordinates): String {
         return encodeGeohash(coordinate.latitude, coordinate.longitude, MAX_HASH_LENGTH)
     }
 
@@ -707,7 +708,7 @@ object Geohash {
      * hash to decode
      * @return lat long point
      */
-    fun decodeGeohash(geohash: String): Coordinate {
+    fun decodeGeohash(geohash: String): Coordinates {
 //        requireNotNull(geohash){"geohash cannot be null"}
         var isEven = true
         val lat = DoubleArray(2)
@@ -733,6 +734,6 @@ object Geohash {
         val resultLat = (lat[0] + lat[1]) / 2
         val resultLon = (lon[0] + lon[1]) / 2
 
-        return Coordinate(resultLat, resultLon)
+        return Coordinates(resultLat, resultLon)
     }
 }
