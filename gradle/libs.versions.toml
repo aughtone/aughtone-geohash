@@ -1,14 +1,19 @@
 [versions]
-agp = "8.9.0"
-kotlin = "2.1.10"
+applicationId = "io.github.aughtone.geohash"
+groupName = "io.github.aughtone"
+versionName = "1.0.0-alpha2"
 android-minSdk = "24"
 android-compileSdk = "35"
+
+agp = "8.9.0"
+kotlin = "2.1.10"
+
 vanniktech = "0.30.0"
-frameworkType = "1.0.0-alpha2"
+aughtone-type = "1.0.0-alpha2"
 
 [libraries]
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
-framework-types = { module = "io.github.aughtone:framework-types", version.ref = "frameworkType" }
+aughtone-types = { module = "io.github.aughtone:types", version.ref = "aughtone-type" }
 
 [plugins]
 androidLibrary = { id = "com.android.library", version.ref = "agp" }

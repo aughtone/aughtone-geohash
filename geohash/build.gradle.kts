@@ -11,7 +11,7 @@ plugins {
 }
 
 group = "io.github.aughtone"
-version = "1.0.0-alpha2"
+version = libs.versions.versionName.get().toString()
 
 kotlin {
     jvm()
@@ -22,16 +22,32 @@ kotlin {
             jvmTarget.set(JvmTarget.JVM_17)
         }
     }
-    iosX64()
-    iosArm64()
-    iosSimulatorArm64()
-    linuxX64()
+    listOf(
+        iosX64(),
+        iosArm64(),
+        iosSimulatorArm64()
+    ).forEach { iosTarget ->
+        iosTarget.binaries.framework {
+            baseName = "GeohashKit"
+            isStatic = true
+//            binaryOption(
+//                "bundleId",
+//                libs.versions.applicationId.get().toString()
+//            ) //"app.occurrence"
+//            binaryOption(
+//                "bundleShortVersionString",
+//                libs.versions.versionName.get().toString()
+//            ) //"1.0.0"
+//            binaryOption("bundleVersion", libs.versions.versionCode.get().toString()) //"1"
+        }
+    }
+//    linuxX64()
 
     sourceSets {
         val commonMain by getting {
             dependencies {
                 //put your multiplatform dependencies here
-                api(libs.framework.types)
+                api(libs.aughtone.types)
             }
         }
         val commonTest by getting {
@@ -63,7 +79,7 @@ kotlin {
 }
 
 android {
-    namespace = "io.github.aughtone.geohash"
+    namespace = libs.versions.applicationId.get().toString()
     compileSdk = libs.versions.android.compileSdk.get().toInt()
     defaultConfig {
         minSdk = libs.versions.android.minSdk.get().toInt()
@@ -81,13 +97,13 @@ mavenPublishing {
         signAllPublications()
     }
 
-    coordinates(group.toString(), "geohash-multiplatform", version.toString())
+    coordinates(group.toString(), "geohash", version.toString())
 
     pom {
         name = "Geohash Multiplatform Library"
         description = "A library."
         inceptionYear = "2025"
-        url = "https://github.com/aughtone/geohash-multiplatform"
+        url = "https://github.com/aughtone/aughtone-geohash"
         licenses {
             license {
                 name = "The Apache License, Version 2.0"
@@ -103,9 +119,9 @@ mavenPublishing {
             }
         }
         scm {
-            url = "https://github.com/aughtone/geohash-multiplatform"
-            connection = "https://github.com/aughtone/geohash-multiplatform.git"
-            developerConnection = "git@github.com:aughtone/geohash-multiplatform.git"
+            url = "https://github.com/aughtone/aughtone-geohash"
+            connection = "https://github.com/aughtone/aughtone-geohash.git"
+            developerConnection = "git@github.com:aughtone/aughtone-geohash.git"
         }
     }
 }
