@@ -40,7 +40,7 @@ Dave lists several features on his project page, but I'll just paraphrase the im
 # Installation
 ![Maven Central Version](https://img.shields.io/maven-central/v/io.github.aughtone/geohash?style=flat)
 ```gradle
-implementation("io.github.aughtone:geohash-multiplatform:${version}")
+implementation("io.github.aughtone:geohash:${version}")
 ```
 
 # Quick Start
