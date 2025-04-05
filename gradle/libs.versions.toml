@@ -9,7 +9,7 @@ agp = "8.9.1"
 kotlin = "2.1.10"
 
 vanniktech = "0.30.0"
-aughtone-type = "1.0.0-alpha2"
+aughtone-type = "1.0.0-alpha3"
 
 [libraries]
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
