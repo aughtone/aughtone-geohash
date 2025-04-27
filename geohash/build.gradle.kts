@@ -22,6 +22,14 @@ kotlin {
             jvmTarget.set(JvmTarget.JVM_17)
         }
     }
+    // See: https://kotlinlang.org/docs/js-project-setup.html
+    js(IR) {
+        browser {
+            generateTypeScriptDefinitions()
+        }
+        useEsModules() // Enables ES2015 modules
+        // binaries.executable()
+    }
     listOf(
         iosX64(),
         iosArm64(),

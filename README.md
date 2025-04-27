@@ -27,7 +27,7 @@ Feel free to fork it and make improvements, I'll keep up as best I can.
 
 Dave lists several features on his project page, but I'll just paraphrase the important one's here:
 
-* Full Multiplatform Library. Its pur kotlin and should compile on any platform.
+* Full Multiplatform Library. It should compile on any platform.
 * encodes a geohashes from a latitude & longitude, with a length from 1 to 12
 * decodes a latitude, longitude from a geohashes
 * finds an adjacent hash in cardinal directions, and works on borders including the poles.
@@ -40,7 +40,7 @@ Dave lists several features on his project page, but I'll just paraphrase the im
 # Installation
 ![Maven Central Version](https://img.shields.io/maven-central/v/io.github.aughtone/geohash?style=flat)
 ```gradle
-implementation("io.github.aughtone:geohash-multiplatform:${version}")
+implementation("io.github.aughtone:geohash:${version}")
 ```
 
 # Quick Start
