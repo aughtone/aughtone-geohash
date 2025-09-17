@@ -27,5 +27,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "geohash-multiplatform"
+rootProject.name = "AOGeohash"
 include(":geohash")

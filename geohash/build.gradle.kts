@@ -1,5 +1,3 @@
-import com.vanniktech.maven.publish.SonatypeHost
-import org.gradle.kotlin.dsl.assign
 import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompileCommon
@@ -99,7 +97,7 @@ android {
 }
 
 mavenPublishing {
-    publishToMavenCentral(SonatypeHost.CENTRAL_PORTAL)
+    publishToMavenCentral()
 
     if (!project.hasProperty("skip-signing")) {
         signAllPublications()
