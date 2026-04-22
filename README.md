@@ -82,5 +82,12 @@ val data : List<String> = Geohash.neighbours(myGeohash)
 ```
 
 # Feedback
+Bugs can go into the issue tracker, but you are probably going to get faster support by creating a PR.
 
-Bugs can go into the issue tracker, but you are probably going to get faster support by creating a PR.   
+---
+## 🤖 AI-Assisted Development
+This library includes embedded, machine-readable "skills" to enhance the experience of developers using AI code assistants. These skills help the AI understand our library's APIs and best practices, leading to more accurate and idiomatic code suggestions.
+
+- **AI Skill Discovery**: Look for `META-INF/ai-skills/*.ai-skill.md`
+
+To learn how to add this capability to your own library, see our [AI Skill Publishing Standard](docs/standards/ai-skill-publishing.md).

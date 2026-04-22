@@ -36,18 +36,8 @@ kotlin {
         iosTarget.binaries.framework {
             baseName = "GeohashKit"
             isStatic = true
-//            binaryOption(
-//                "bundleId",
-//                libs.versions.applicationId.get().toString()
-//            ) //"app.occurrence"
-//            binaryOption(
-//                "bundleShortVersionString",
-//                libs.versions.versionName.get().toString()
-//            ) //"1.0.0"
-//            binaryOption("bundleVersion", libs.versions.versionCode.get().toString()) //"1"
         }
     }
-//    linuxX64()
 
     sourceSets {
         val commonMain by getting {
