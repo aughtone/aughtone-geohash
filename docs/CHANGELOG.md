@@ -4,7 +4,12 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+## [1.0.0] - 2026-04-23
 
 ### Added
-- **AughtOne AI-Skill**: Integrated the **AughtOne AI-Skill Publishing Standard**.
+- **AI-Skill Integration**: Published the `io.github.aughtone.geohash.ai-skill.md` machine-readable skill to expose Geohash capabilities to AI agents.
+- **Project Governance**: Initialized the 5-sector documentation hierarchy (`ARCH.md`, `SPEC.md`, `DEVELOPER.md`) and core standards for KMP development.
+- **Agent Instructions**: Added `AGENTS.md` to guide AI contributors on repository structure and quality engineering protocols.
+
+### Changed
+- Stabilized dependencies and build configuration for the `1.0.0` stable release.
