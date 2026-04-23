@@ -1,5 +1,3 @@
-import com.vanniktech.maven.publish.SonatypeHost
-import org.gradle.kotlin.dsl.assign
 import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompileCommon
@@ -38,18 +36,8 @@ kotlin {
         iosTarget.binaries.framework {
             baseName = "GeohashKit"
             isStatic = true
-//            binaryOption(
-//                "bundleId",
-//                libs.versions.applicationId.get().toString()
-//            ) //"app.occurrence"
-//            binaryOption(
-//                "bundleShortVersionString",
-//                libs.versions.versionName.get().toString()
-//            ) //"1.0.0"
-//            binaryOption("bundleVersion", libs.versions.versionCode.get().toString()) //"1"
         }
     }
-//    linuxX64()
 
     sourceSets {
         val commonMain by getting {
@@ -99,7 +87,7 @@ android {
 }
 
 mavenPublishing {
-    publishToMavenCentral(SonatypeHost.CENTRAL_PORTAL)
+    publishToMavenCentral()
 
     if (!project.hasProperty("skip-signing")) {
         signAllPublications()
