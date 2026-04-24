@@ -5,6 +5,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 
+## [1.0.4] - 2026-04-24
+
+### Changed
+- **Branding & Standardization**:
+    - Renamed "AughtOne" to "Aughtone" across the project.
+    - Unified iOS Kit naming to `AughtoneGeohashKit` and added missing `bundleId`.
+    - Standardized `namespace` to `io.github.aughtone.geohash`.
+- **Dependency Updates**: Bumped `aughtone-types` to `2.0.3`.
+
 ## [1.0.3] - 2026-04-23
 
 ### Changed
