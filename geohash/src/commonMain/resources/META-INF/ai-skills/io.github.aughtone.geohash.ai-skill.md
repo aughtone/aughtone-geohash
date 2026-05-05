@@ -1,5 +1,6 @@
 ---
 skill-id: io.github.aughtone.geohash
+spec-version: 1.0
 name: "[Aughtone Geohash](https://github.com/aughtone/aughtone-geohash)"
 type: "Aughtone AI-Skill"
 scope: core
