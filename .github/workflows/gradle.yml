@@ -14,6 +14,9 @@ on:
     branches: [ "main" ]
   workflow_call:
 
+env:
+  GRADLE_OPTS: -Dorg.gradle.jvmargs="-Xmx4g -XX:MaxMetaspaceSize=512m -XX:+UseParallelGC"
+
 permissions:
   contents: read
 

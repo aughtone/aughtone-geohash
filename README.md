@@ -86,8 +86,11 @@ Bugs can go into the issue tracker, but you are probably going to get faster sup
 
 ---
 ## 🤖 AI-Assisted Development
-This library includes embedded, machine-readable "skills" to enhance the experience of developers using AI code assistants. These skills help the AI understand our library's APIs and best practices, leading to more accurate and idiomatic code suggestions.
+This library includes embedded, machine-readable "skills" to help AI assistants understand its APIs and best practices.
 
-- **AI Skill Discovery**: Look for `META-INF/ai-skills/*.ai-skill.md`
+- **Discovery**: Look for `META-INF/ai-skills/*.ai-skill.md`
 
-To learn how to add this capability to your own library, see our [AI Skill Publishing Standard](docs/standards/ai-skill-publishing.md).
+### 🪄 Magic Prompt for AI Assistants
+If you are using an AI assistant (like Claude, Gemini, or ChatGPT) to write code with this library, paste this prompt first:
+
+> "Scan all project dependencies for AI Skill files in `META-INF/ai-skills/` with the prefix `io.github.aughtone.geohash`. Use these to understand the API patterns, types, and governance for this library. If they are not found in the local classpath, refer to [https://github.com/aughtone/aughtone-geohash] for the source definitions."
