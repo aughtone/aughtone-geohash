@@ -1,6 +1,6 @@
 [![GitHub license](https://img.shields.io/badge/license-Apache%20License%202.0-blue.svg?style=flat)](http://www.apache.org/licenses/LICENSE-2.0)
 ![Maven Central Version](https://img.shields.io/maven-central/v/io.github.aughtone/geohash?style=flat)
-[![Kotlin](https://img.shields.io/badge/Kotlin-2.1.10-blue.svg?logo=kotlin&style=flat)](http://kotlinlang.org)
+[![Kotlin](https://img.shields.io/badge/Kotlin-2.4.0-blue.svg?logo=kotlin&style=flat)](http://kotlinlang.org)
 [![Kotlin Multiplatform](https://img.shields.io/badge/Kotlin-Multiplatform-brightgreen?logo=kotlin)](https://github.com/JetBrains/compose-multiplatform)
 
 
@@ -45,31 +45,31 @@ implementation("io.github.aughtone:geohash:${version}")
 
 # Quick Start
 
-You can use a Coordinate object, or a pair of Double values to generate a geohash from.
+You can use a Coordinates object, or a pair of Double values to generate a geohash from.
 ```kotlin
-val location: Coordinate = Coordinate(latitude = 20.05, longitude = -15.5)
+val location: Coordinates = Coordinates(latitude = 20.05, longitude = -15.5)
 val geohash = location.toGeohash(4)
 ```
 To generate a geohash with a maximum length: 
 ```kotlin
-val geohash:String = stringGeohashOf(coordinate = location)
+val geohash: String = stringGeohashOf(coordinate = location)
 ```
 
 You can also specify the length of the geohash you want to generate:
 ```kotlin
-val geohash:String = stringGeohashOf(coordinate = location, length = 6)
+val geohash: String = stringGeohashOf(coordinate = location, length = 6)
 
 ```
 You can work with an encoded geohash. 
 The lambda must return either the same geohash or a modified version:
 ```kotlin
-val checkCoordinate: Coordinate = Coordinate(latitude = 20.05, longitude = -15.5)
+val checkCoordinate: Coordinates = Coordinates(latitude = 20.05, longitude = -15.5)
 val myGeohash = stringGeohashOf(latitude = 20.05, longitude = -15.5, length = 6)
-val myOther = geohash(myGeohash) { geohash ->
-            if(geohash contains checkCoordinate) {
-                it.southOf()
-            }else{
-                geohash adjacent Direction.TOP
+val myOther = geohash(myGeohash) { hash ->
+            if (hash contains checkCoordinate) {
+                hash.southOf()
+            } else {
+                hash adjacent Direction.TOP
             }
         }
 

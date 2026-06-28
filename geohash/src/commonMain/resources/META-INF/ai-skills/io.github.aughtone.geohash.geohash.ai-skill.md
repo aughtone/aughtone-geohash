@@ -3,7 +3,7 @@ skill-id: io.github.aughtone.geohash.geohash
 spec-version: 1.0
 type: "Aughtone AI-Skill"
 scope: core
-compatibility: ">=1.0.3"
+compatibility: ">=1.0.4"
 author: "[Brill Pappin](https://github.com/bpappin)"
 ---
 
@@ -27,6 +27,12 @@ This library provides geohash encoding, decoding, and neighbor calculations for 
 - `longGeohashOf(coordinate: Coordinates, length): Long`
 - `String.toAccuracy(accuracy: Accuracy): String`: Truncates a hash.
     - **Usage**: `"9q9hr5udfr".toAccuracy(Accuracy.About5km)` -> `"9q9hr"`
+
+### **Bounding Box Coverage**
+- `Geohash.coverBoundingBox(topLeftLat, topLeftLon, bottomRightLat, bottomRightLon, length): Coverage`
+- `Geohash.coverBoundingBoxMaxHashes(topLeftLat, topLeftLon, bottomRightLat, bottomRightLon, maxHashes): Coverage?`
+- `Coverage`: Represents bounds coverage. Properties: `hashes: Set<String>`, `ratio: Double`, `hashLength: Int`.
+- `CoverageLongs`: High-performance coverage representation. Properties: `hashes: LongArray`, `count: Int`, `ratio: Double`, `hashLength: Int`.
 
 ### **Spatial DSL**
 Use the `geohash` function to access a rich DSL for spatial manipulation.

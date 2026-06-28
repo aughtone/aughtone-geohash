@@ -1,14 +1,14 @@
 [versions]
 namespace = "io.github.aughtone.geohash"
-versionName = "1.0.3"
+versionName = "1.0.4"
 android-minSdk = "24"
 android-compileSdk = "37"
 
-agp = "9.1.1"
-kotlin = "2.3.20"
+agp = "9.2.1"
+kotlin = "2.4.0"
 
-vanniktech = "0.36.0"
-aughtone-type = "2.0.3"
+vanniktech = "0.37.0"
+aughtone-type = "3.1.0"
 
 [libraries]
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
