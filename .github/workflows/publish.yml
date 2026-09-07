@@ -2,11 +2,8 @@
 
 name: Publish
 on:
-  # Disabled: a push to main must never publish. History rewrites and
-  # force-pushes would otherwise cut a release and push to Central.
-  # Restore this trigger deliberately, as part of a release cycle.
-  # push:
-  #   branches: [ "main" ]
+  push:
+    branches: [ "main" ]
   release:
     types: [published]
 
@@ -45,9 +42,14 @@ jobs:
   publish:
     name: Release build and publish
     needs: create-release
+    # create-release only runs for push events. Without a status check
+    # function here, a skipped dependency would skip this job too, so a
+    # published release would never publish.
     if: |
-      github.event_name == 'release' || 
-      (github.event_name == 'push' && needs.create-release.outputs.release_id != '')
+      !cancelled() &&
+      needs.create-release.result != 'failure' &&
+      (github.event_name == 'release' ||
+       (github.event_name == 'push' && needs.create-release.outputs.release_id != ''))
     runs-on: macOS-latest
     steps:
       - name: Check out code
