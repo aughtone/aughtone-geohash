@@ -9,7 +9,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 ## [1.0.4] - 2026-06-28
 
 ### Added
-- **Bounding Box Coverage**: Added bounding box coverage capabilities (`coverBoundingBox` and `coverBoundingBoxMaxHashes`) to the public API and documented them in the AI skill.
+- **Bounding Box Coverage**: Added bounding box coverage capabilities (`coverBoundingBox` and `coverBoundingBoxMaxHashes`) to the public API.
 
 ### Changed
 - **Branding & Standardization**:
@@ -36,9 +36,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 
 ### Added
-- **AI-Skill Integration**: Published the `io.github.aughtone.geohash.ai-skill.md` machine-readable skill to expose Geohash capabilities to AI agents.
 - **Project Governance**: Initialized the 5-sector documentation hierarchy (`ARCH.md`, `SPEC.md`, `DEVELOPER.md`) and core standards for KMP development.
-- **Agent Instructions**: Added `AGENTS.md` to guide AI contributors on repository structure and quality engineering protocols.
+- **Agent Instructions**: Added `AGENTS.md` to guide AI contributors on repository structure and contribution conventions.
 
 ### Changed
 - Stabilized dependencies and build configuration for the `1.0.0` stable release.

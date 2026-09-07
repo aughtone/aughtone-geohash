@@ -84,13 +84,3 @@ val data : List<String> = Geohash.neighbours(myGeohash)
 # Feedback
 Bugs can go into the issue tracker, but you are probably going to get faster support by creating a PR.
 
----
-## 🤖 AI-Assisted Development
-This library includes embedded, machine-readable "skills" to help AI assistants understand its APIs and best practices.
-
-- **Discovery**: Look for `META-INF/ai-skills/*.ai-skill.md`
-
-### 🪄 Magic Prompt for AI Assistants
-If you are using an AI assistant (like Claude, Gemini, or ChatGPT) to write code with this library, paste this prompt first:
-
-> "Scan all project dependencies for AI Skill files in `META-INF/ai-skills/` with the prefix `io.github.aughtone.geohash`. Use these to understand the API patterns, types, and governance for this library. If they are not found in the local classpath, refer to [https://github.com/aughtone/aughtone-geohash] for the source definitions."
