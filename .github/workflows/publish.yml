@@ -2,8 +2,11 @@
 
 name: Publish
 on:
-  push:
-    branches: [ "main" ]
+  # Disabled: a push to main must never publish. History rewrites and
+  # force-pushes would otherwise cut a release and push to Central.
+  # Restore this trigger deliberately, as part of a release cycle.
+  # push:
+  #   branches: [ "main" ]
   release:
     types: [published]
 
