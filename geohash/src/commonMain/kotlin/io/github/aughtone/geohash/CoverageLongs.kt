@@ -44,6 +44,11 @@ data class CoverageLongs(val hashes: LongArray, val count: Int, val ratio: Doubl
         result = 31 * result + ratio.hashCode()
         return result
     }
+
+    override fun toString(): String {
+        val ratioStr = if (ratio.toString().contains('.')) ratio.toString() else "$ratio.0"
+        return "CoverageLongs(hashes=${hashes.contentToString()}, count=$count, ratio=$ratioStr)"
+    }
 }
 
 fun io.github.aughtone.geohash.CoverageLongs?.toCoverage(): io.github.aughtone.geohash.Coverage? = if (this == null) {

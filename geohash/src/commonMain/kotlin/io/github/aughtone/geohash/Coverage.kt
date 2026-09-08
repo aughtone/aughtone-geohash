@@ -35,4 +35,8 @@ data class Coverage(val hashes: Set<String>, val ratio: Double) {
     val hashLength: Int = if (hashes.isEmpty()) 0
     else hashes.iterator().next().length
 
+    override fun toString(): String {
+        val ratioStr = if (ratio.toString().contains('.')) ratio.toString() else "$ratio.0"
+        return "Coverage(hashes=$hashes, ratio=$ratioStr)"
+    }
 }

@@ -2,11 +2,11 @@
 
 ## 📦 Distribution & Publishing
 
-AOTypes is a Kotlin Multiplatform library published to **Maven Central** using the `com.vanniktech.maven-publish` plugin.
+Aughtone Geohash is a Kotlin Multiplatform library published to **Maven Central** using the `com.vanniktech.maven-publish` plugin.
 
 ### Coordinates
 - **Group**: `io.github.aughtone`
-- **Artifact**: `types`
+- **Artifact**: `geohash`
 - **Version**: Managed via `libs.versions.versionName`
 
 ### Infrastructure

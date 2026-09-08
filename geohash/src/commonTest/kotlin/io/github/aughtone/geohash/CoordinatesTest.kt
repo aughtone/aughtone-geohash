@@ -1,6 +1,7 @@
 package io.github.aughtone.geohash
 
 import io.github.aughtone.types.quantitative.Coordinates
+import io.github.aughtone.types.quantitative.add
 import io.github.aughtone.types.quantitative.split
 import kotlin.test.Test
 import kotlin.test.assertEquals
@@ -41,7 +42,7 @@ class CoordinatesTest {
     @Test
     fun testInfixAdd() {
         val a: Coordinates = testCoordinate
-        val b = a(1.0, 1.0)
+        val b = a.add(1.0, 1.0)
         assertNotEquals(a, b)
         assertEquals(21.05, b.latitude)
         assertEquals(-14.5, b.longitude)

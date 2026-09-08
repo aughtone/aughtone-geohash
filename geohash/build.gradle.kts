@@ -6,14 +6,14 @@ plugins {
     alias(libs.plugins.vanniktech.mavenPublish)
 }
 
-group = "io.github.aughtone"
+group = libs.versions.namespace.get().toString()
 version = libs.versions.versionName.get().toString()
 
 kotlin {
     jvmToolchain(17)
     jvm()
     android {
-        namespace = libs.versions.applicationId.get()
+        namespace = libs.versions.namespace.get().toString()
         compileSdk {
             version = release(libs.versions.android.compileSdk.get().toInt())
         }
@@ -32,8 +32,12 @@ kotlin {
         iosSimulatorArm64()
     ).forEach { iosTarget ->
         iosTarget.binaries.framework {
-            baseName = "GeohashKit"
+            baseName = "AughtoneGeohashKit"
             isStatic = true
+            binaryOption(
+                "bundleId",
+                libs.versions.namespace.get().toString()
+            )
         }
     }
 
@@ -54,7 +58,7 @@ kotlin {
     compilerOptions {
         // XXX Activate when this is resolved:
         //  https://youtrack.jetbrains.com/issue/KT-57847/Move-common-for-all-the-backends-module-name-compiler-option-to-the-KotlinCommonCompilerOptions
-        // moduleName = "io.github.aughtone.types"
+        //    namespace = libs.versions.namespace.get().toString()
     }
     // XXX Remove whent he above is resolved. This is a workaround.
     //  https://youtrack.jetbrains.com/issue/KT-66568/w-KLIB-resolver-The-same-uniquename...-found-in-more-than-one-library
@@ -73,7 +77,7 @@ kotlin {
 }
 
 mavenPublishing {
-    publishToMavenCentral()
+    publishToMavenCentral(automaticRelease = true)
 
     if (!project.hasProperty("skip-signing")) {
         signAllPublications()
@@ -82,7 +86,7 @@ mavenPublishing {
     coordinates(group.toString(), "geohash", version.toString())
 
     pom {
-        name = "Geohash Multiplatform Library"
+        name = "Aughtone Geohash"
         description = "A library."
         inceptionYear = "2025"
         url = "https://github.com/aughtone/aughtone-geohash"
