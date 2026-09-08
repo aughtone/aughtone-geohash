@@ -6,7 +6,7 @@ plugins {
     alias(libs.plugins.vanniktech.mavenPublish)
 }
 
-group = libs.versions.namespace.get().toString()
+group = libs.versions.groupId.get().toString()
 version = libs.versions.versionName.get().toString()
 
 kotlin {

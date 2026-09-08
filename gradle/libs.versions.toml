@@ -1,5 +1,8 @@
 [versions]
+# Android namespace and iOS bundleId.
 namespace = "io.github.aughtone.geohash"
+# Maven coordinate. Published API - changing this orphans every consumer.
+groupId = "io.github.aughtone"
 versionName = "1.0.5"
 android-minSdk = "24"
 android-compileSdk = "37"
