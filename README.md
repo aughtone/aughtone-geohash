@@ -33,7 +33,7 @@ Dave lists several features on his project page, but I'll just paraphrase the im
 * finds an adjacent hash in cardinal directions, and works on borders including the poles.
 * can find all 8 adjacent hashes
 * calculates hash length to enclose a bounding box
-* calculates geohashes of given length to cover a bounding box, wih ratios.
+* calculates geohashes of given length to cover a bounding box, with ratios.
 * can calculate the height and width of a geohashe in degrees
 * encodes & decodes Long values from geohashes
 
