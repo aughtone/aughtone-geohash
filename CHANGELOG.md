@@ -6,6 +6,16 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 
 
+## [1.0.5] - 2026-09-07
+
+### Changed
+- **Dependency Updates**:
+    - Bumped `aughtone-types` to `3.4.0`.
+
+### Removed
+- **Embedded AI Skills**: The `META-INF/ai-skills/` resource is no longer packaged in the published artifact. Consumers that scanned dependencies for a skill file will not find one here.
+- **Standards Documentation**: Removed the AI-skill and quality-engineering standards documents.
+
 ## [1.0.4] - 2026-06-28
 
 ### Added

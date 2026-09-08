@@ -1,0 +1,15 @@
+{
+  "tracker": {
+    "type": "github",
+    "connection": "github-aughtone-geohash",
+    "mcpServer": "github-aughtone-geohash",
+    "repo": "aughtone/aughtone-geohash",
+    "prefix": "AOGH"
+  },
+  "snapshot": "synced",
+  "updates": {
+    "check": true,
+    "skillsRepo": "bpappin/skills",
+    "skillsBranch": "master"
+  }
+}
